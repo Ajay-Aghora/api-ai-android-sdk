@@ -44,7 +44,7 @@ public abstract class AIService {
 
     private static final String TAG = AIService.class.getName();
 
-    protected final AIConfiguration config;
+    protected final AIAndroidConfiguration config;
     protected final Context context;
 
     protected final AIDataService aiDataService;
@@ -57,25 +57,25 @@ public abstract class AIService {
      * @param config
      * @return instance of AIService implementation
      */
-    public static AIService getService(final Context context, final AIConfiguration config) {
-        if (config.getRecognitionEngine() == AIConfiguration.RecognitionEngine.Google) {
+    public static AIService getService(final Context context, final AIAndroidConfiguration config) {
+        if (config.getRecognitionEngine() == AIAndroidConfiguration.RecognitionEngine.Google) {
             return new GoogleRecognitionServiceImpl(context, config);
         }
-        if (config.getRecognitionEngine() == AIConfiguration.RecognitionEngine.System) {
+        if (config.getRecognitionEngine() == AIAndroidConfiguration.RecognitionEngine.System) {
             return new GoogleRecognitionServiceImpl(context, config);
         }
-        else if (config.getRecognitionEngine() == AIConfiguration.RecognitionEngine.Speaktoit) {
+        else if (config.getRecognitionEngine() == AIAndroidConfiguration.RecognitionEngine.Speaktoit) {
             return new SpeaktoitRecognitionServiceImpl(context, config);
         } else {
             throw new UnsupportedOperationException("This engine still not supported");
         }
     }
 
-    protected AIService(final AIConfiguration config, final Context context) {
+    protected AIService(final AIAndroidConfiguration config, final Context context) {
         this.config = config;
         this.context = context;
 
-        aiDataService = new AIDataService(context, config);
+        aiDataService = new AIDataService(config);
     }
 
     /**

@@ -32,7 +32,7 @@ import com.google.gson.JsonElement;
 import java.util.HashMap;
 import java.util.Map;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.GsonFactory;
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
@@ -48,7 +48,7 @@ public class AIDialogSampleActivity extends BaseActivity implements AIDialog.AID
     private TextView resultTextView;
     private AIDialog aiDialog;
 
-    private Gson gson = GsonFactory.getGson();
+    private Gson gson = GsonFactory.getDefaultFactory().getGson();
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -57,9 +57,9 @@ public class AIDialogSampleActivity extends BaseActivity implements AIDialog.AID
 
         resultTextView = (TextView) findViewById(R.id.resultTextView);
 
-        final AIConfiguration config = new AIConfiguration(Config.ACCESS_TOKEN,
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(Config.ACCESS_TOKEN,
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         aiDialog = new AIDialog(this, config);
         aiDialog.setResultsListener(this);

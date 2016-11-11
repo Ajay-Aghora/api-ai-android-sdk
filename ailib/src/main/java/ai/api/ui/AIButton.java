@@ -36,7 +36,7 @@ import android.view.animation.Transformation;
 
 import java.util.List;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIListener;
 import ai.api.AIService;
 import ai.api.AIServiceException;
@@ -186,7 +186,7 @@ public class AIButton extends SoundLevelButton implements AIListener {
         }
     }
 
-    public void initialize(final AIConfiguration config) {
+    public void initialize(final AIAndroidConfiguration config) {
         aiService = AIService.getService(getContext(), config);
         aiService.setListener(this);
 

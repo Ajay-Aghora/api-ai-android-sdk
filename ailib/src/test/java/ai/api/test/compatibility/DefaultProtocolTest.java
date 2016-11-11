@@ -35,7 +35,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.util.Calendar;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIServiceException;
 import ai.api.BuildConfig;
 import ai.api.GsonFactory;
@@ -58,10 +58,10 @@ public class DefaultProtocolTest {
 
     @Test
     public void legacyContextsTest() {
-        final AIConfiguration config = new AIConfiguration(
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(
                 "3485a96fb27744db83e78b8c4bc9e7b7",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         config.setProtocolVersion(null);
 
@@ -99,10 +99,10 @@ public class DefaultProtocolTest {
 
     @Test
     public void outputContextVoiceTest() {
-        final AIConfiguration config = new AIConfiguration(
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(
                 "3485a96fb27744db83e78b8c4bc9e7b7",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.Speaktoit);
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.Speaktoit);
 
         config.setProtocolVersion(null);
 
@@ -143,7 +143,7 @@ public class DefaultProtocolTest {
         }
     }
 
-    private void prepareRequest(final AIRequest request, final AIConfiguration config) {
+    private void prepareRequest(final AIRequest request, final AIAndroidConfiguration config) {
         request.setLanguage(config.getApiAiLanguage());
         request.setTimezone(Calendar.getInstance().getTimeZone().getID());
     }

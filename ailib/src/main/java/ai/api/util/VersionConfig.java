@@ -107,6 +107,6 @@ public class VersionConfig {
 
     @Override
     public String toString() {
-        return GsonFactory.getGson().toJson(this);
+        return GsonFactory.getDefaultFactory().getGson().toJson(this);
     }
 }

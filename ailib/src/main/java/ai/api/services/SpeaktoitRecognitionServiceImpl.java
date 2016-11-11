@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIService;
 import ai.api.AIServiceException;
 import ai.api.RequestExtras;
@@ -77,7 +77,7 @@ public class SpeaktoitRecognitionServiceImpl extends AIService implements
     private RequestExtras extras;
     private RecognizeTask recognizeTask;
 
-    public SpeaktoitRecognitionServiceImpl(final Context context, final AIConfiguration config) {
+    public SpeaktoitRecognitionServiceImpl(final Context context, final AIAndroidConfiguration config) {
         super(config, context);
         init();
     }

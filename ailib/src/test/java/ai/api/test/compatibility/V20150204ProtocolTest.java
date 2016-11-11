@@ -33,7 +33,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.util.Calendar;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIServiceException;
 import ai.api.BuildConfig;
 import ai.api.GsonFactory;
@@ -57,10 +57,10 @@ public class V20150204ProtocolTest {
 
     @Test
     public void legacySpeechTest() throws MalformedURLException, AIServiceException {
-        final AIConfiguration config = new AIConfiguration(
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(
                 "3485a96fb27744db83e78b8c4bc9e7b7",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         config.setProtocolVersion(PROTOCOL_VERSION);
 
@@ -81,10 +81,10 @@ public class V20150204ProtocolTest {
 
     @Test
     public void legacySpeechVoiceRequestTest() throws MalformedURLException, AIServiceException {
-        final AIConfiguration config = new AIConfiguration(
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(
                 "3485a96fb27744db83e78b8c4bc9e7b7",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         config.setProtocolVersion(PROTOCOL_VERSION);
 
@@ -103,7 +103,7 @@ public class V20150204ProtocolTest {
         assertEquals("My name is Sam", aiResponse.getResult().getSpeech());
     }
 
-    private void prepareRequest(final AIRequest request, final AIConfiguration config) {
+    private void prepareRequest(final AIRequest request, final AIAndroidConfiguration config) {
         request.setLanguage(config.getApiAiLanguage());
         request.setTimezone(Calendar.getInstance().getTimeZone().getID());
     }

@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIListener;
 import ai.api.AIService;
 import ai.api.GsonFactory;
@@ -83,7 +83,7 @@ public class AIServiceSampleActivity extends BaseActivity
     private TextView resultTextView;
     private EditText contextTextView;
 
-    private Gson gson = GsonFactory.getGson();
+    private Gson gson = GsonFactory.getDefaultFactory().getGson();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -102,10 +102,10 @@ public class AIServiceSampleActivity extends BaseActivity
     }
 
     private void initService(final LanguageConfig selectedLanguage) {
-        final AIConfiguration.SupportedLanguages lang = AIConfiguration.SupportedLanguages.fromLanguageTag(selectedLanguage.getLanguageCode());
-        final AIConfiguration config = new AIConfiguration(selectedLanguage.getAccessToken(),
+        final AIAndroidConfiguration.SupportedLanguages lang = AIAndroidConfiguration.SupportedLanguages.fromLanguageTag(selectedLanguage.getLanguageCode());
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(selectedLanguage.getAccessToken(),
                 lang,
-                AIConfiguration.RecognitionEngine.System);
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         if (aiService != null) {
             aiService.pause();

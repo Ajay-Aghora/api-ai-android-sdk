@@ -76,9 +76,9 @@ public abstract class ProtocolTestBase {
     }
 
     private AIDataService createDataService() {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -88,9 +88,9 @@ public abstract class ProtocolTestBase {
     }
 
     private AIDataService createDataService(final String accessToken) {
-        final AIConfiguration config = new AIConfiguration(accessToken,
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(accessToken,
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -186,9 +186,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void outputContextVoiceTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.Speaktoit);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.Speaktoit);
 
         updateConfig(config);
 
@@ -228,9 +228,9 @@ public abstract class ProtocolTestBase {
         }
 
         {
-            final AIConfiguration secondConfig = new AIConfiguration(getSecondAccessToken(),
-                    AIConfiguration.SupportedLanguages.English,
-                    AIConfiguration.RecognitionEngine.System);
+            final AIAndroidConfiguration secondConfig = new AIAndroidConfiguration(getSecondAccessToken(),
+                    AIAndroidConfiguration.SupportedLanguages.English,
+                    AIAndroidConfiguration.RecognitionEngine.System);
 
             updateConfig(secondConfig);
 
@@ -250,9 +250,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void sessionTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -310,9 +310,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void testRussianLanguage() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getRuAccessToken(),
-                AIConfiguration.SupportedLanguages.Russian,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getRuAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.Russian,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -329,9 +329,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void testBrazilLanguage() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getPtBrAccessToken(),
-                AIConfiguration.SupportedLanguages.PortugueseBrazil,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getPtBrAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.PortugueseBrazil,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -350,9 +350,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void errorTextRequestTest() {
-        final AIConfiguration config = new AIConfiguration("WRONG_ACCESS_TOKEN",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration("WRONG_ACCESS_TOKEN",
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -373,9 +373,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void errorVoiceRequestTest() {
-        final AIConfiguration config = new AIConfiguration("WRONG_ACCESS_TOKEN",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration("WRONG_ACCESS_TOKEN",
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -394,9 +394,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void resetContextsTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.Speaktoit);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.Speaktoit);
 
         updateConfig(config);
 
@@ -424,9 +424,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void requestEntitiesTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -512,9 +512,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void userEntitiesTest() throws AIServiceException{
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -565,9 +565,9 @@ public abstract class ProtocolTestBase {
 
     @Test
     public void userEntitiesCollectionTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(getAccessToken(),
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(getAccessToken(),
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         updateConfig(config);
 
@@ -847,7 +847,7 @@ public abstract class ProtocolTestBase {
         return dwarfs;
     }
 
-    protected void updateConfig(final AIConfiguration config) {
+    protected void updateConfig(final AIAndroidConfiguration config) {
 
     }
 

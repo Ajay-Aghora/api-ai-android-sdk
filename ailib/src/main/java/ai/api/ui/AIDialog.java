@@ -31,7 +31,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIService;
 import ai.api.AIServiceException;
 import ai.api.PartialResultsListener;
@@ -45,7 +45,7 @@ public class AIDialog {
     private static final String TAG = AIDialog.class.getName();
 
     private final Context context;
-    private final AIConfiguration config;
+    private final AIAndroidConfiguration config;
 
     private AIDialogListener resultsListener;
     private final Dialog dialog;
@@ -60,11 +60,11 @@ public class AIDialog {
         void onCancelled();
     }
 
-    public AIDialog(final Context context, final AIConfiguration config) {
+    public AIDialog(final Context context, final AIAndroidConfiguration config) {
         this(context, config, R.layout.aidialog);
     }
 
-    public AIDialog(final Context context, final AIConfiguration config, final int customLayout) {
+    public AIDialog(final Context context, final AIAndroidConfiguration config, final int customLayout) {
         this.context = context;
         this.config = config;
         dialog = new Dialog(context);

@@ -41,7 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIService;
 import ai.api.AIServiceException;
 import ai.api.PartialResultsListener;
@@ -85,7 +85,7 @@ public class GoogleRecognitionServiceImpl extends AIService {
     }
 
 
-    public GoogleRecognitionServiceImpl(final Context context, final AIConfiguration config) {
+    public GoogleRecognitionServiceImpl(final Context context, final AIAndroidConfiguration config) {
         super(config, context);
 
         final ComponentName component = RecognizerChecker.findGoogleRecognizer(context);

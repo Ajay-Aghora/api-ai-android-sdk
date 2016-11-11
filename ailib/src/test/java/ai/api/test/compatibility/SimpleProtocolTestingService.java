@@ -26,12 +26,12 @@ import android.content.Context;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIDataService;
 import ai.api.AIServiceException;
 
 public class SimpleProtocolTestingService extends AIDataService {
-    public SimpleProtocolTestingService(final Context context, final AIConfiguration config) {
+    public SimpleProtocolTestingService(final Context context, final AIAndroidConfiguration config) {
         super(context, config);
     }
 

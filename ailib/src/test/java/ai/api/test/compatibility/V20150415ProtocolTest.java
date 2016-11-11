@@ -31,7 +31,7 @@ import org.robolectric.annotation.Config;
 import java.util.Collections;
 import java.util.List;
 
-import ai.api.AIConfiguration;
+import ai.api.AIAndroidConfiguration;
 import ai.api.AIDataService;
 import ai.api.AIServiceException;
 import ai.api.BuildConfig;
@@ -52,10 +52,10 @@ public class V20150415ProtocolTest {
 
     @Test
     public void legacyContextsWithoutParametersTest() throws AIServiceException {
-        final AIConfiguration config = new AIConfiguration(
+        final AIAndroidConfiguration config = new AIAndroidConfiguration(
                 "3485a96fb27744db83e78b8c4bc9e7b7",
-                AIConfiguration.SupportedLanguages.English,
-                AIConfiguration.RecognitionEngine.System);
+                AIAndroidConfiguration.SupportedLanguages.English,
+                AIAndroidConfiguration.RecognitionEngine.System);
 
         config.setProtocolVersion(PROTOCOL_VERSION);
 
