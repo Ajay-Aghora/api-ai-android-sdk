@@ -84,7 +84,7 @@ public abstract class ProtocolTestBase {
 
         SessionIdStorage.resetSessionId(RuntimeEnvironment.application);
 
-        return new AIDataService(RuntimeEnvironment.application, config);
+        return new AIDataService(config);
     }
 
     private AIDataService createDataService(final String accessToken) {
@@ -96,7 +96,7 @@ public abstract class ProtocolTestBase {
 
         SessionIdStorage.resetSessionId(RuntimeEnvironment.application);
 
-        return new AIDataService(RuntimeEnvironment.application, config);
+        return new AIDataService(config);
     }
 
     @Test
@@ -192,7 +192,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         final InputStream inputStream = getClass().getClassLoader().getResourceAsStream("what_is_your_name.raw");
 
@@ -234,7 +234,7 @@ public abstract class ProtocolTestBase {
 
             updateConfig(secondConfig);
 
-            final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, secondConfig);
+            final AIDataService aiDataService = new AIDataService(secondConfig);
 
             final AIRequest aiRequest = new AIRequest();
             aiRequest.setQuery(query);
@@ -256,8 +256,8 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService firstService = new AIDataService(RuntimeEnvironment.application, config);
-        final AIDataService secondService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService firstService = new AIDataService(config);
+        final AIDataService secondService = new AIDataService(config);
 
         {
             final AIRequest weatherRequest = new AIRequest();
@@ -316,7 +316,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         final AIRequest aiRequest = new AIRequest("привет");
         final AIResponse aiResponse = makeRequest(aiDataService, aiRequest);
@@ -335,7 +335,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         final AIRequest aiRequest = new AIRequest();
         aiRequest.setQuery("oi");
@@ -356,7 +356,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         final AIRequest aiRequest = new AIRequest();
         aiRequest.setQuery("Hello");
@@ -379,7 +379,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
         final InputStream voiceStream = getClass().getClassLoader().getResourceAsStream("what_is_your_name.raw");
 
         try {
@@ -400,7 +400,7 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         {
             final AIRequest aiRequest = new AIRequest("what is your name");
@@ -430,8 +430,8 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
-        final AIDataService secondService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
+        final AIDataService secondService = new AIDataService(config);
 
         {
             final AIRequest aiRequest = new AIRequest();
@@ -518,8 +518,8 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
-        final AIDataService secondDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
+        final AIDataService secondDataService = new AIDataService(config);
 
         final Entity dwarfsEntity = createDwarfsEntity();
 
@@ -571,8 +571,8 @@ public abstract class ProtocolTestBase {
 
         updateConfig(config);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
-        final AIDataService secondDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
+        final AIDataService secondDataService = new AIDataService(config);
 
         final Entity dwarfsEntity = createDwarfsEntity();
         final Entity hobbitsEntity = createHobbitsEntity();

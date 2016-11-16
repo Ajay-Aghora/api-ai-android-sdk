@@ -53,7 +53,7 @@ public class V20150204ProtocolTest {
 
     private static final String PROTOCOL_VERSION = "20150204";
 
-    final Gson gson = GsonFactory.getGson();
+    final Gson gson = GsonFactory.getDefaultFactory().getGson();
 
     @Test
     public void legacySpeechTest() throws MalformedURLException, AIServiceException {

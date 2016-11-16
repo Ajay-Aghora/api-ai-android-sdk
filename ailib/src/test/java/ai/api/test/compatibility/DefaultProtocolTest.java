@@ -54,7 +54,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(RobolectricTestRunner.class)
 public class DefaultProtocolTest {
 
-    final Gson gson = GsonFactory.getGson();
+    final Gson gson = GsonFactory.getDefaultFactory().getGson();
 
     @Test
     public void legacyContextsTest() {

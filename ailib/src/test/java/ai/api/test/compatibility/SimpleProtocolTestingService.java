@@ -32,7 +32,7 @@ import ai.api.AIServiceException;
 
 public class SimpleProtocolTestingService extends AIDataService {
     public SimpleProtocolTestingService(final Context context, final AIAndroidConfiguration config) {
-        super(context, config);
+        super(config);
     }
 
     public String doDefaultProtocolTextRequest(final String requestJson) throws MalformedURLException, AIServiceException {

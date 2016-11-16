@@ -59,7 +59,7 @@ public class V20150415ProtocolTest {
 
         config.setProtocolVersion(PROTOCOL_VERSION);
 
-        final AIDataService aiDataService = new AIDataService(RuntimeEnvironment.application, config);
+        final AIDataService aiDataService = new AIDataService(config);
 
         final AIContext weatherContext = new AIContext("weather");
         weatherContext.setParameters(Collections.singletonMap("location", "London"));
